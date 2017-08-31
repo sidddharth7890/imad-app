@@ -4,22 +4,23 @@ var button = document.getElementById('counter');
 button.onclick = function (){
     
     
-  //make request to the counter end point
+  //create a request object 
   var request = new XMLHttpRequest(); 
+  
   //capture the response and store it in variable
   request.onreadystatechange = function (){
     if (request.readyState === XMLHttpRequest.DONE){
-     //take some action   
+    
+  //take some action   
     if (request.status === 200){
-    var counter = request.responseText;    
-    var span = document.getElementById('count');
-    span.innerHTML = counter.toString();    
+        var counter = request.responseText;    
+        var span = document.getElementById('count');
+        span.innerHTML = counter.toString();    
     }    
     }  
-     // not done yet
+  // not done yet
   };
-  //render the variable in the correct span
-    
-    
-    
+  // make the request
+  request.open('GET' , 'http://fultariyas.imad.hasura-app.io/counter', true);
+  request.send(null);
 }; 
