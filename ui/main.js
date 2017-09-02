@@ -24,6 +24,8 @@ button.onclick = function (){
   request.open('GET' , 'http://fultariyas.imad.hasura-app.io/counter', true);
   request.send(null);
 }; 
+
+//submit name
 var submit = document.getElementById('submit_btn');
 submit.onlclick = function () {
  //create a request object 
